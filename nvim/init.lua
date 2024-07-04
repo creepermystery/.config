@@ -28,19 +28,14 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
--- default to relative line numbers
-vim.opt.relativenumber = true
-
--- default to 4 spaces per tab
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
+
+-- automatic relative line numbering
+vim.opt.relativenumber = true
 
 vim.schedule(function()
   require "mappings"
